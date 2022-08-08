@@ -12,7 +12,7 @@ import ReactiveSwift
 
 class PermutiveManager {
     private static let apiKey = ""
-    private static let organisationid = ""
+    private static let organisationId = ""
     private static let workspaceId = ""
     static let shared = PermutiveManager()
     static var isReady = MutableProperty<Bool>(false)
@@ -21,7 +21,7 @@ class PermutiveManager {
     static func startSDK() {
         guard let options = Options(
             apiKey: PermutiveManager.apiKey,
-            organisationId: PermutiveManager.organisationid,
+            organisationId: PermutiveManager.organisationId,
             workspaceId: PermutiveManager.workspaceId
         ) else {
             return
