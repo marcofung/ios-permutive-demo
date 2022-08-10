@@ -8,14 +8,12 @@
 
 import Foundation
 import Permutive_iOS
-import ReactiveSwift
 
 class PermutiveManager {
-    private static let apiKey = ""
-    private static let organisationId = ""
-    private static let workspaceId = ""
+    private static let apiKey = "10a245c4-a2f8-4502-8824-8d767a630613"
+    private static let organisationId = "8230918b-a7dd-44fb-a85a-7ff990c4d151"
+    private static let workspaceId = "8230918b-a7dd-44fb-a85a-7ff990c4d151"
     static let shared = PermutiveManager()
-    static var isReady = MutableProperty<Bool>(false)
     var pageTracker: PageTrackerProtocol?
     
     static func startSDK() {
@@ -36,14 +34,13 @@ class PermutiveManager {
                 return
             }
             print("Permutive SDK ready.")
-            PermutiveManager.isReady.value = true
             PermutiveManager.testTracker()
         }
     }
     
     static func testTracker() {
         do {
-            let url = URL(string: "https://9gag.com/hot")!
+            let url = URL(string: "https://9jokes.com")!
             let properties = try? EventProperties([:])
             let pageContext = Context(
                 title: "Home",
@@ -51,7 +48,7 @@ class PermutiveManager {
                 referrer: nil
             )
             let pageTracker = try? Permutive.shared.createPageTracker(properties: properties, context: pageContext)
-            print("createPageTracker=\(String(describing: pageTracker)) when isReady=\(PermutiveManager.isReady.value)")
+            print("createPageTracker=\(String(describing: pageTracker))")
             guard let tracker = pageTracker else {
                 return
             }

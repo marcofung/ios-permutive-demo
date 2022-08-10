@@ -6,8 +6,6 @@ target 'ios-main' do
   use_frameworks!
 
   # Pods for app
-  pod 'Google-Mobile-Ads-SDK', '8.13.0'
   pod 'Permutive_iOS', '~> 1.5.0'
-  pod 'ReactiveSwift', '6.7.0'
 
 end
